@@ -26,7 +26,7 @@ jobs:
         run: echo "Hello, world!"
 
       - name: "Show env vars"
-        if: ${{ env.PLATFORM == 'hostinger' }}
+        if: ${{ env.PLATFORM == 'netlify' }}
         run: |
           echo 'Esto es el valor de NODE_ENV: ${{env.NODE_ENV}}'
           echo 'Esto es el valor de ENCRYPTION_KEY: ${{env.ENCRYPTION_KEY}}'
