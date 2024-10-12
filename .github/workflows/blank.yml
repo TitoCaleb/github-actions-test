@@ -34,8 +34,11 @@ jobs:
           echo 'Esto es el valor de NODE_ENV: ${{env.NODE_ENV}}'
           echo 'Esto es el valor de ENCRYPTION_KEY: ${{env.ENCRYPTION_KEY}}'
           echo 'Esto es el valor de ENCRYPTION_IV: ${{env.ENCRYPTION_IV}}'
-          echo 'Esto es el valor de username: ${{env.username}}'
-          echo 'Esto es el valor de password: ${{env.password}}'
+
+      - name: "Show secrets if the username is correct"
+        if: ${{ env.username != '' && env.password == '' }}
+        run: |
+          echo 'Haz logrado acceder a las variables secretas'
 
       - name: "Show env default vars"
         run: |
