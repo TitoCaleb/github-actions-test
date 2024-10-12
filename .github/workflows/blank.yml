@@ -36,7 +36,7 @@ jobs:
           echo 'Esto es el valor de ENCRYPTION_IV: ${{env.ENCRYPTION_IV}}'
 
       - name: "Show secrets if the username is correct"
-        if: ${{ env.username != '' && env.password == '' }}
+        if: ${{ env.username != '' && env.password != '' }}
         run: |
           echo 'Haz logrado acceder a las variables secretas'
 
