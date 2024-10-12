@@ -13,6 +13,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     env:
+      PLATFORM: "hostinger"
       NODE_ENV: "prod"
       ENCRYPTION_KEY: IUtl07jZ1YVEEfC5+qK+HdJ+cKcn16MbsEvL6eckDc787H2ytRJkHPA0yXDik2Ih
       ENCRYPTION_IV: 12345978546784512
@@ -25,6 +26,7 @@ jobs:
         run: echo "Hello, world!"
 
       - name: "Show env vars"
+        if: ${{ env.PLATFORM == 'hostinger' }}
         run: |
           echo 'Esto es el valor de NODE_ENV: ${{env.NODE_ENV}}'
           echo 'Esto es el valor de ENCRYPTION_KEY: ${{env.ENCRYPTION_KEY}}'
